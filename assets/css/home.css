@@ -206,6 +206,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* friends bar */
+
+.whitehover:hover {
+  color: white;
+}
+
 /* player bar */
 .fill-gray {
   fill: #969696;
@@ -216,9 +223,7 @@ body {
 #hoverSVG:hover {
   fill: white;
 }
-.fs-8 {
-  font-size: 0.6rem;
-}
+
 .lh-null {
   line-height: 0.5;
 }
