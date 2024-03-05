@@ -10,6 +10,10 @@
   font-family: "Circular";
 }
 
+.whitehover:hover {
+  color: white;
+}
+
 @media (max-width: 992px) {
   .custom-image-size {
     height: 20px !important;
