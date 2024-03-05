@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
     <title>Spotify - Home</title>
   </head>
@@ -18,7 +19,7 @@
       <div class="row">
         <div class="col-12 col-md-2 bg-black">prova</div>
         <!-- START -->
-        <div class="col-12 col-md-8 px-4">
+        <div id="middleHome" class="col-12 col-md-8 px-4">
           <!-- NAVIGATION BUTTONS + ACCOUNT -->
           <!-- DA FARE -->
           <!-- JUMBOTRON ALBUM -->
@@ -342,7 +343,141 @@
           </footer>
         </div>
         <!-- END -->
-        <div class="col-12 col-md-2 bg-black">prova3</div>
+        <div class="col-12 col-md-2 pe-1 bg-black align-content-center d-none d-xl-block">
+          <div class="d-flex mb-3 justify-content-between">
+            <p class="text-white me-1 mt-3 fw-bold medtxt">Attività amici</p>
+            <div class="d-flex align-items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-person-add m-0"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                />
+                <path
+                  d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"
+                />
+              </svg>
+              <button class="border-0 bg-black">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!----------------------- Amico_1 -------------------------------------->
+          <div class="container-fluid text-center mb-4 whitehover">
+            <div class="row">
+              <div class="col-12 col-md-2 p-0">
+                <img
+                  class="rounded-circle custom-image-size"
+                  src="https://cdn.openart.ai/published/qkOde7PWf3mZp8uIMOmW/i6uExO0l_YfUh_256.webp"
+                  style="height: 25px"
+                />
+              </div>
+              <div class="col-12 col-md-8 p-0 d-flex flex-column whitehover">
+                <h5 class="mx-1 mb-1 text-start medtxt">Lia Welman</h5>
+                <h4 class="mx-1 mb-1 text-start smalltxt">Niggas in Paris • Jay-Z</h4>
+                <div class="d-flex text-start align-items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-disc d-flex mx-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                      d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                  <h4 class="mx-1 mb-1 text-start smalltxt">EP III</h4>
+                </div>
+              </div>
+              <div class="col-12 col-md-2 p-0" style="font-size: xx-small">5 min</div>
+            </div>
+          </div>
+          <!----------------------- Amico_2 -------------------------------------->
+          <div class="container-fluid text-center mb-4 whitehover">
+            <div class="row">
+              <div class="col-12 col-md-2 p-0">
+                <img
+                  class="rounded-circle custom-image-size"
+                  src="https://cdn.openart.ai/published/dp2Bq2wd3be0FkVK7kUf/tFcr2B2K_blvw_256.webp"
+                  style="height: 25px"
+                />
+              </div>
+              <div class="col-12 col-md-8 p-0 d-flex flex-column">
+                <h5 class="mx-1 mb-1 text-start medtxt">Tally Xander</h5>
+                <h4 class="mx-1 mb-1 text-start smalltxt">Lazza • 100 Messaggi</h4>
+                <div class="d-flex text-start align-items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-disc d-flex mx-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                      d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                  <h4 class="mx-0 mb-1 text-start smalltxt">Cenere</h4>
+                </div>
+              </div>
+              <div class="col-12 col-md-2 p-0" style="font-size: xx-small">2 hrs</div>
+            </div>
+          </div>
+          <!----------------------- Amico_3 -------------------------------------->
+          <div class="container-fluid text-center mb-4 whitehover">
+            <div class="row">
+              <div class="col-12 col-md-2 p-0">
+                <img
+                  class="rounded-circle custom-image-size"
+                  src="https://images.generated.photos/EWt4xUFS_hIh21bhIPZJv2b-uvHnACzYsr56Lf5-4hA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/NjE4NzcwLmpwZw.jpg"
+                  style="height: 25px"
+                />
+              </div>
+              <div class="col-12 col-md-8 p-0 d-flex flex-column">
+                <h5 class="mx-1 mb-1 text-start medtxt">Joseph Chan</h5>
+                <h4 class="mx-1 mb-1 text-start smalltxt">Bulls*t • Chris Brown</h4>
+                <div class="d-flex text-start align-items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-disc d-flex mx-1"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                      d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1m4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                  <h4 class="mx-0 mb-1 text-start smalltxt">Heartbreak</h4>
+                </div>
+              </div>
+              <div class="col-12 col-md-2 p-0" style="font-size: xx-small">1 days</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="container-fluid">
         <div>Container player</div>
