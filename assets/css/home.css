@@ -1,20 +1,78 @@
+:root{
+    --clear-grey_01:#343434;
+    --grey_01: #2c2c2c;
+    --grey_02: #2e2e2e;
+    --grey_03: #303030;
+    --grey_10: #161616;
+    --black_01: #111111;
+    --black_02: #0d0d0d;
+    --btn_green: #1ed760;
+}
+
 body{
     font-family: "Circular";
 }
 
 .jumbotron .row{
     /* background-image: linear-gradient(to bottom left, #212121 0%, #131313 100%); */
-    background-image: radial-gradient( ellipse at top right, #2e2e2e 0%, #2e2e2e 10%, #111111 60%, #0d0d0d 70%);
+    background-image: radial-gradient( ellipse at top right, var(--grey_02) 0%, var(--grey_02)  10%, var(--black_01) 60%, var(--black_02) 70%);
+}
+
+.bg-linear-gradient{
+    background-image: linear-gradient( to bottom, var(--grey_02) 0%, var(--black_01) 50%, var(--black_02) 70%);
 }
 
 .fs-7{
     font-size: 0.7rem;
 }
 
-.bg-grey{
-    background-color: #303030;
+.fs-8{
+    font-size: 0.8rem;
+}
+
+.fs-9{
+    font-size: 0.9rem;
+}
+
+.bg-grey-01{
+    background-color: var(--grey_01);
+}
+
+.bg-grey-03{
+    background-color: var(--grey_03);
 }
 
 .bg-green{
-    background-color: #1ed760;
+    background-color: var(--btn_green)
+}
+
+.bg-grey-10{
+    background-color: var(--grey_10);
+}
+
+.card.bg-grey-01:hover{
+    cursor: pointer;
+    background-color: var(--clear-grey_01);
+    transition-duration: 0.2s;
+}
+
+.card.bg-grey-10:hover{
+    cursor: pointer;
+    background-color: var(--grey_03);
+    transition-duration: 0.3s;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    line-height: 2rem;
+}
+
+ul li a{
+    color: rgb(166, 166, 166);
+    text-decoration: none;
+}
+
+ul li a:hover{
+    border-bottom: solid 1px white;
 }
