@@ -13,6 +13,10 @@ body {
   font-family: "Circular";
 }
 
+header {
+  height: 50px;
+}
+
 .jumbotron .row {
   /* background-image: linear-gradient(to bottom left, #212121 0%, #131313 100%); */
   background-image: radial-gradient(
@@ -166,12 +170,12 @@ body {
   overflow-x: hidden;
 }
 
-.leftUpSize {
-  height: 45vh;
+.fit-content {
+  height: 100vh;
 }
 
 .scroll {
-  height: 50vh;
+  height: 60vh;
 }
 
 .scrollHome {
@@ -203,6 +207,46 @@ body {
 .navMobile {
   height: 200px;
   background-image: linear-gradient(transparent, #000000);
+  margin: 0;
+  padding: 0;
+}
+
+/* friends bar */
+
+.whitehover:hover {
+  color: white;
+}
+
+/* player bar */
+.fill-gray {
+  fill: #969696;
+}
+.fill-black {
+  fill: black;
+}
+.fill-white {
+  fill: white;
+}
+#hoverSVG:hover {
+  fill: white;
+}
+
+.lh-null {
+  line-height: 0.5;
+}
+
+/* nav sinistra versione mobile */
+.navMobile ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.navMobile li {
+  font-size: 30px;
+}
+.navMobile {
+  height: 150px;
+  background-image: linear-gradient(to bottom, #0000008b, #000000bf 10%, #000000 50%);
   margin: 0;
   padding: 0;
 }
