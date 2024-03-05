@@ -1,0 +1,109 @@
+body{
+  font-family: "Circular";
+}
+body {
+  font-size: 0.9em;
+}
+
+.divNav {
+    height:100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  .mobile {
+    width: 100%;
+    margin-top: 50px;
+  }
+.divNav i{
+    font-size: 1.3em;
+    
+}
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+
+
+  .favourite, .add, .bookmark{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2%;
+      border-radius: 2px;
+      font-size: 10px;
+      
+
+  }
+
+  .favourite{
+      background-image: linear-gradient(#3C1FA8, #7B918B);
+      color: #fff;
+
+  }
+
+  .add{
+      background-color: #B2B2B2;
+      color:black;
+
+  }
+
+  .bookmark{
+      background-color: #004537;
+      color: #149643;
+  }
+
+  .scroll, .scrollHome{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+  }
+  .scroll{
+    height: 40%;
+  }
+
+  .scrollHome{
+    height: 85%;
+  }
+
+.scrollbar-primary::-webkit-scrollbar {
+    width: 12px;   
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #bfbfbf 0%, #aeabab 100%);
+    background-image: linear-gradient(120deg, #aeabab 100%);
+} 
+
+ /* nav sinistra versione mobile */
+.navMobile ul {
+  list-style-type: none; 
+  padding: 0;
+  width: 100%;
+  
+}
+.navMobile li {
+  font-size: 30px;
+ 
+
+}
+.navMobile{
+  height: 200px;
+  background-image: linear-gradient(transparent, #000000);
+  margin: 0;
+  padding: 0;
+}

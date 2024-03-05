@@ -9,15 +9,16 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/circular-font.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
     <title>Spotify - Home</title>
   </head>
   <body class="bg-grey-03 bg-linear-gradient">
     <main class="container-fluid">
       <div class="row">
         <!-- navbar sinistra -->
-        <div class="d-none d-lg-block col-md-2 bg-black text-white p-3 fit-content">
+        <div class="d-none d-lg-block col-lg-3 col-xl-2 bg-black text-white p-3 fit-content">
           <section>
             <nav class="navbar navbar-expand-lg navbar-dark">
               <!-- Contenuto della barra di navigazione -->
@@ -295,88 +296,88 @@
           </section>
         </div>
         <!-- START -->
-        <div id="middleHome" class="col-12 col-md-8 px-4 scrollHome fit-content">
-          <!-- BANNER TOP -->
-          <div class="containerAlbum mt-3">
+        <div id="middleHome" class="col-12 col-lg-9 col-xl-8 px-4 scrollHome fit-content">
+          <!-- navbar mobile -->
+          <header class="d-flex justify-content-between align-items-center mt-3">
             <!-- FRECCE -->
-            <div class="row align-items-center justify-content-between">
-              <div class="col-3">
-                <button class="bg-dark rounded-circle border-0 p-2 me-3">
-                  <svg
-                    data-encore-id="icon"
-                    role="img"
-                    aria-hidden="true"
-                    heigth="20px"
-                    width="20px"
-                    class="fill-gray"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
-                    ></path>
-                  </svg>
-                </button>
+            <div class="d-none d-lg-block">
+              <button class="bg-dark rounded-circle border-0 p-2 me-3">
+                <svg
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  heigth="20px"
+                  width="20px"
+                  class="fill-gray"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"
+                  ></path>
+                </svg>
+              </button>
 
-                <button class="bg-dark rounded-circle border-0 p-2">
-                  <svg
-                    data-encore-id="icon"
-                    role="img"
-                    aria-hidden="true"
-                    heigth="20px"
-                    width="20px"
-                    class="fill-gray"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
+              <button class="bg-dark rounded-circle border-0 p-2">
+                <svg
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  heigth="20px"
+                  width="20px"
+                  class="fill-gray"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <!-- ACCOUNT DROPDOWN -->
+            <div class="dropdown p-3 pe-4 d-none d-lg-block">
+              <a
+                class="btn dropdown-toggle rounded-5 p-2"
+                style="background: #000"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  style="width: 26px; height: 26px"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRij6dtiHizH96qpCOe8WeXXP3yLyQJkPdGVg&usqp=CAU"
+                  class="rounded-circle"
+                />
+                <span class="me-3"> manuel marco </span>
+              </a>
 
-              <!-- ACCOUNT DROPDOWN -->
-              <div class="col-2 pe-2">
-                <div id="dropdownMenuButton" data-toggle="dropdown">
-                  <button
-                    type="button"
-                    class="btn btn-dark btn-sm dropdown-toggle d-flex align-items-center bg-black justify-content-between rounded-pill px-1"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRij6dtiHizH96qpCOe8WeXXP3yLyQJkPdGVg&usqp=CAU"
-                      alt="Icona utente"
-                      class="rounded-circle"
-                      width="30"
-                      height="30"
-                    />
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li>
+                  <a class="dropdown-item list-item text-white" href="#"><span>Account</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item list-item text-white" href="#"><span>Impostazioni</span></a>
+                </li>
 
-                    <span class="ms-1"> marco mnuel </span>
+                <li>
+                  <a class="dropdown-item list-item text-white" href="#"><span>Esci</span></a>
+                </li>
+              </ul>
+            </div>
 
-                    <span class="dropdown-toggle-icon"></span>
-                  </button>
-
-                  <div class="dropdown-menu account-list">
-                    <div class="link-list-wrapper">
-                      <ul class="link-list">
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"><span>Account</span></a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"><span>Impostazioni</span></a>
-                        </li>
-
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"><span>Esci</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+            <!-- RESPONSIVE HEADER -->
+            <div class="mobile h2 d-block d-sm-block d-md-block d-lg-none">
+              <div class="row">
+                <div class="col col-8">Buonasera</div>
+                <div class="col col-4 d-flex justify-content-between">
+                  <i class="bi bi-bell"></i>
+                  <i class="bi bi-clock-history"></i>
+                  <i class="bi bi-gear"></i>
                 </div>
               </div>
             </div>
-          </div>
+          </header>
           <!-- JUMBOTRON ALBUM -->
           <div class="jumbotron container py-3">
             <div class="row rounded-1">
@@ -698,7 +699,7 @@
           </footer>
         </div>
         <!-- END -->
-        <div class="col-12 col-md-2 pe-1 bg-black align-content-center d-none d-xl-block">
+        <div class="col-12 col-xl-2 pe-1 bg-black align-content-center d-none d-xl-block">
           <div class="d-flex mb-3 justify-content-between">
             <p class="text-white me-1 mt-3 fw-bold fs-6">Attività amici</p>
             <div class="d-flex align-items-center">
@@ -835,8 +836,109 @@
         </div>
       </div>
     </main>
+
+    <!-- va sotto al conteiner fluid container player  -->
+    <!-- qui la versione mobile del play e nav sx -->
+    <div class="d-block d-sm-block d-md-block d-lg-none text-white fixed-bottom">
+      <!-- qui ci va il play mobile -->
+
+      <div class="d-flex align-items-center rounded mx-3 py-2 playNav bg-dark">
+        <div class="row" style="width: 100%">
+          <div class="col-6 fs-3">
+            <div class="d-flex align-items-center">
+              <div>
+                <img src="./assets/imgs/main/image-12.jpg" alt="cover" width="50px" class="object-fit-fill" />
+              </div>
+              <div class="lh-null pt-2 ps-3 d-flex flex-column">
+                <h6>Fat Funny Friend</h6>
+                <p class="fs-8 text-secondary-emphasis">Maddie Zahm</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 d-flex justify-content-end align-items-center">
+            <!-- connetti a dispositivo -->
+            <button class="bg-dark border-0 lh-1">
+              <svg
+                data-encore-id="icon"
+                role="presentation"
+                aria-hidden="true"
+                width="17px"
+                viewBox="0 0 16 16"
+                class="fill-gray"
+                id="hoverSVG"
+              >
+                <path
+                  d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
+                ></path>
+                <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+              </svg>
+            </button>
+            <!-- cuore -->
+            <button class="bg-dark border-0 lh-1 ps-4">
+              <svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                width="17px"
+                class="fill-gray"
+                id="hoverSVG"
+              >
+                <path
+                  d="M1.69 2A4.582 4.582 0 0 1 8 2.023 4.583 4.583 0 0 1 11.88.817h.002a4.618 4.618 0 0 1 3.782 3.65v.003a4.543 4.543 0 0 1-1.011 3.84L9.35 14.629a1.765 1.765 0 0 1-2.093.464 1.762 1.762 0 0 1-.605-.463L1.348 8.309A4.582 4.582 0 0 1 1.689 2zm3.158.252A3.082 3.082 0 0 0 2.49 7.337l.005.005L7.8 13.664a.264.264 0 0 0 .311.069.262.262 0 0 0 .09-.069l5.312-6.33a3.043 3.043 0 0 0 .68-2.573 3.118 3.118 0 0 0-2.551-2.463 3.079 3.079 0 0 0-2.612.816l-.007.007a1.501 1.501 0 0 1-2.045 0l-.009-.008a3.082 3.082 0 0 0-2.121-.861z"
+                ></path>
+              </svg>
+            </button>
+            <!-- play -->
+            <button class="bg-dark border-0 lh-1 ps-4">
+              <svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                width="16px"
+                class="fill-gray"
+              >
+                <path
+                  d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"
+                ></path>
+              </svg>
+            </button>
+            <!-- pause -->
+            <button class="bg-dark border-0 lh-1 ps-4 d-none">
+              <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" width="16px">
+                <path
+                  d="M2.7 1a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-2.6z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- navbar sx versione mobile -->
+      <nav class="navbar navMobile">
+        <ul class="d-flex justify-content-around pb-1">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class="bi bi-house"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <li class="nav-item" href="#">
+            <i class="bi bi-bookshelf"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- mobile bar -->
+
     <!-- player bar -->
-    <div class="container-fluid fixed-bottom bg-dark py-1 m-1">
+    <div class="container-fluid fixed-bottom bg-dark py-1 m-1 d-none d-lg-block">
       <div class="d-flex justify-content-between align-items-center row">
         <div class="d-flex col-4">
           <div class="d-flex align-items-center">

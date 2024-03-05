@@ -13,6 +13,10 @@ body {
   font-family: "Circular";
 }
 
+header {
+  height: 50px;
+}
+
 .jumbotron .row {
   /* background-image: linear-gradient(to bottom left, #212121 0%, #131313 100%); */
   background-image: radial-gradient(
@@ -229,4 +233,20 @@ body {
 
 .lh-null {
   line-height: 0.5;
+}
+
+/* nav sinistra versione mobile */
+.navMobile ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.navMobile li {
+  font-size: 30px;
+}
+.navMobile {
+  height: 150px;
+  background-image: linear-gradient(to bottom, #0000008b, #000000bf 10%, #000000 50%);
+  margin: 0;
+  padding: 0;
 }
