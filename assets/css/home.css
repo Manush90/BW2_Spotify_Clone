@@ -56,6 +56,11 @@ header {
   background-color: var(--btn_green);
 }
 
+.bg-green:hover {
+  background-color: var(--btn_green);
+  transform: scale(1.05);
+}
+
 .bg-grey-10 {
   background-color: var(--grey_10);
 }
