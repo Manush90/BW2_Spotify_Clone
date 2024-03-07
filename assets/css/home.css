@@ -234,11 +234,9 @@ body {
 .fill-white {
   fill: white;
 }
+
 .hoverSVG:hover {
   fill: white;
-}
-.fill-green {
-  fill: var(--btn_green);
 }
 
 .hoverPlay:hover {

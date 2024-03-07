@@ -120,3 +120,61 @@ const fillHeart = () => {
     );
   }
 };
+
+// PlayerBar
+
+//barra regolabile del volume
+function updateVolume() {
+  const volumeRange = document.getElementById("volumeRange");
+  const volumeFill = document.getElementById("volumeFill");
+  const value = volumeRange.value;
+
+  volumeFill.style.width = value + "%";
+}
+
+const playButton = document.getElementById("playButton");
+const pauseButton = document.getElementById("pauseButton");
+const mobilePlayButton = document.getElementById("mobilePlayButton");
+const mobilePauseButton = document.getElementById("mobilePauseButton");
+
+playButton.addEventListener("click", () => {
+  playButton.classList.add("d-none");
+  pauseButton.classList.remove("d-none");
+});
+
+pauseButton.addEventListener("click", () => {
+  pauseButton.classList.add("d-none");
+  playButton.classList.remove("d-none");
+});
+
+mobilePlayButton.addEventListener("click", () => {
+  mobilePlayButton.classList.add("d-none");
+  mobilePauseButton.classList.remove("d-none");
+});
+
+mobilePauseButton.addEventListener("click", () => {
+  mobilePauseButton.classList.add("d-none");
+  mobilePlayButton.classList.remove("d-none");
+});
+
+const shuffleButton = document.getElementById("shuffle");
+const repeatButton = document.getElementById("repeat");
+
+shuffleButton.addEventListener("click", () => {
+  if (shuffleButton.classList.contains("fill-gray")) {
+    shuffleButton.classList.add("fill-green");
+    shuffleButton.classList.remove("fill-gray");
+  } else {
+    shuffleButton.classList.remove("fill-green");
+    shuffleButton.classList.add("fill-gray");
+  }
+});
+repeatButton.addEventListener("click", () => {
+  if (repeatButton.classList.contains("fill-gray")) {
+    repeatButton.classList.add("fill-green");
+    repeatButton.classList.remove("fill-gray");
+  } else {
+    repeatButton.classList.remove("fill-green");
+    repeatButton.classList.add("fill-gray");
+  }
+});
