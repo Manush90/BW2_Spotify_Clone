@@ -11,6 +11,7 @@
 
 body {
   font-family: "Circular";
+  height: 100vh;
 }
 
 header {
@@ -226,6 +227,7 @@ body {
 .fill-gray {
   fill: #969696;
 }
+
 .fill-black {
   fill: black;
 }
@@ -234,6 +236,9 @@ body {
 }
 .hoverSVG:hover {
   fill: white;
+}
+.fill-green {
+  fill: var(--btn_green);
 }
 
 .hoverPlay:hover {
