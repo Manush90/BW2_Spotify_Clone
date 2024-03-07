@@ -251,67 +251,63 @@ body {
   padding: 0;
 }
 
-  
-  
-  /* css della parte centrale album */
+/* css della parte centrale album */
 
-  .account-list .list-item:hover {
-    background-color: rgb(51, 51, 51); 
-  }
-  
+.account-list .list-item:hover {
+  background-color: rgb(51, 51, 51);
+}
 
-  .link-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #linkArtista {
-    text-decoration: none;
-  }
-  
-  
-  .frecceHover:hover{
-    transform: scale(1.1);
-  }
-  
-  .containerSongs {
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#linkArtista {
+  text-decoration: none;
+}
+
+.frecceHover:hover {
+  transform: scale(1.1);
+}
+
+.containerSongs {
   background-color: rgba(0, 0, 0, 0.5);
   height: 50vh;
-  }
-  
-  #containerDatiAlbum {
+}
+
+#containerDatiAlbum {
   display: flex;
-  }
-  
-  #containerTestoAlbum {
+}
+
+#containerTestoAlbum {
   padding-left: 20px;
   bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 10px;
-  }
-  
-  .btnSongs {
+}
+
+.btnSongs {
   display: inline;
   /* height: 50px; */
   width: 50px;
   border-radius: 50%;
   background: none;
   border: none;
-  }
-  
-  .btnSongs:hover{
-    transform: scale(1.1);
-  }
-  
-  #btnPlay {
+}
+
+.btnSongs:hover {
+  transform: scale(1.1);
+}
+
+#btnPlay {
   color: #1ed760;
   border-radius: 50%;
-  }
-  
-  .textColorSongs {
+}
+
+.textColorSongs {
   color: lightgrey;
-  }
- /* fine album */
+}
+/* fine album */
