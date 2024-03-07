@@ -232,8 +232,16 @@ body {
 .fill-white {
   fill: white;
 }
-#hoverSVG:hover {
+.hoverSVG:hover {
   fill: white;
+}
+
+.hoverPlay:hover {
+  transform: scale(1.05);
+}
+
+.fill-green {
+  fill: var(--btn_green);
 }
 
 .lh-null {
