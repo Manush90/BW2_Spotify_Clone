@@ -222,14 +222,16 @@ body {
 .fill-gray {
   fill: #969696;
 }
+
 .fill-black {
   fill: black;
 }
 .fill-white {
   fill: white;
 }
-#hoverSVG:hover {
-  fill: white;
+
+.fill-green{
+  fill: var(--btn_green);
 }
 
 .lh-null {
