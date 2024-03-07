@@ -1,6 +1,3 @@
-const url = ("https://striveschool-api.herokuapp.com/api/deezer/album/"); 
-
-
 
 
 
@@ -10,32 +7,55 @@ const headers = {
     "X-RapidAPI-Key": "be3da42077mshb39f0419e14de60p17053fjsnfb2d6848dc67",
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
- 
+  
 };
 
-const id="248216622";
+const urlAlbum = 'https://deezerdevs-deezer.p.rapidapi.com/album/248216622';
+// const id = "248216622";
+
+
+
+const getAlbumData = async (urlAlbum) =>{
+  try{
+    // const response = await fetch( url + `${album}`,headers);
+     const response = await fetch( url + id,headers);
+     if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching playlist data:", error);
+    return null;
+  }
+};
+
+
+
+
+
 // const searchParams= new URLSearchParams(window.location.search)
 // const id = searchParams.get("Id")
 
-let album=[];
+// let album=[];
 
-function getAlbum() {
-  fetch(url + id, {
-    headers: headers,
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      let album = data;
-      console.log(album);
-      popolaBanner(data);
-      popolaCanzoni(data);
-    })
-    .catch((err) => console.log("Fetch error:", err));
-}
+// function getAlbum() {
+//   fetch(url + id, {
+//     headers: headers,
+//   })
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((data) => {
+//       let album = data;
+//       console.log(album);
+//       popolaBanner(data);
+//       popolaCanzoni(data);
+//     })
+//     .catch((err) => console.log("Fetch error:", err));
+// }
 
-window.onload = getAlbum();
+// window.onload = getAlbum();
 
 
 function popolaBanner(artista) {
