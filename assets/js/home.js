@@ -6,6 +6,7 @@ const options = {
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
+
 // JUMBOTRON ENDPOINT
 const jumbotronEndpoint = "https://deezerdevs-deezer.p.rapidapi.com/album/226762";
 
@@ -102,10 +103,13 @@ const populateSecondSectionCards = async () => {
       const titleElement = card.querySelector(".card-title");
       const authorElement = card.querySelector(".card-text");
       const imageElement = card.querySelector(".card-img-top");
+      const link = card.querySelector("a");
 
       titleElement.textContent = album.title;
       authorElement.textContent = album.artist.name;
       imageElement.src = album.cover_medium;
+
+      link.href = `./album-page-center.html?id=${album.id}`;
     });
   } catch (error) {
     console.error("Error populating playlist cards:", error);
@@ -132,7 +136,7 @@ const populateThirdSectionCards = async () => {
       authorElement.textContent = album.artist.name;
       imageElement.src = album.cover_medium;
 
-      link.href = `./album-page-center.html?`;
+      link.href = `./album-page-center.html?id=${album.id}`;
 
       // link.addEventListener("click", (event) => {
       //   event.preventDefault(); // Previeni il comportamento predefinito del link

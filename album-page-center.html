@@ -391,7 +391,8 @@
               <a class="d-flex text-white align-items-center" id="linkArtista">
                 <img src="" class="rounded-circle me-3" onclick="getToArtist('${album.artist.id}')" />
                 <p class="artist_Name" onclick="getToArtist('${album.artist.id}')">
-                  ricchi e poveri • 1980 • 12 brani, 40 min 20sec
+                  ricchi e poveri • 1980 • 12 brani
+                  <!-- , 40 min 20sec -->
                 </p>
               </a>
             </div>
@@ -490,50 +491,7 @@
               </div>
               <!-- CANZONI -->
               <!--popolato con js-->
-              <div id="boxSongs">
-                <div class="row">
-                  <div class="col-1">
-                    <p class="textColorSongs">1</p>
-                  </div>
-                  <div class="col-5">
-                    <p class="small textColorSongs">le canzoni del cuore</p>
-                  </div>
-                  <div class="col-4">
-                    <p class="small textColorSongs">34324523</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="timeSong small textColorSongs">34 min 333 sec</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-1">
-                    <p class="textColorSongs">1</p>
-                  </div>
-                  <div class="col-5">
-                    <p class="small textColorSongs">le canzoni del cuore</p>
-                  </div>
-                  <div class="col-4">
-                    <p class="small textColorSongs">34324523</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="timeSong small textColorSongs">34 min 333 sec</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-1">
-                    <p class="textColorSongs">1</p>
-                  </div>
-                  <div class="col-5">
-                    <p class="small textColorSongs">le canzoni del cuore</p>
-                  </div>
-                  <div class="col-4">
-                    <p class="small textColorSongs">34324523</p>
-                  </div>
-                  <div class="col-2">
-                    <p class="timeSong small textColorSongs">34 min 333 sec</p>
-                  </div>
-                </div>
-              </div>
+              <div id="boxSongs"></div>
             </div>
           </div>
         </div>
@@ -575,5 +533,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/album.js"></script>
   </body>
 </html>
