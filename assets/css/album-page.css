@@ -273,7 +273,7 @@ body {
 
 .containerSongs {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 50vh;
+  height: fit-content;
 }
 
 #containerDatiAlbum {
