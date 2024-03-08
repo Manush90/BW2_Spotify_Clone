@@ -254,3 +254,42 @@ repeatButton.addEventListener("click", () => {
     repeatButton.classList.add("fill-gray");
   }
 });
+
+function trackSessionStorage(event) {
+  const trackElement = event.target.closest(".trackDiv");
+  const trackTitle = trackElement.querySelector(".trackTitle").textContent;
+  const artistSong = document.getElementById("artistName").textContent;
+  const coverAlbum = document.getElementById("album_Cover").getAttribute("src");
+
+  localStorage.clear();
+
+  localStorage.setItem("selectedtrackTitle", trackTitle);
+  localStorage.setItem("selectedartistSong", artistSong);
+  localStorage.setItem("selectedcoverAlbum", coverAlbum);
+
+  compilePlayer();
+  hideOrSeen();
+}
+
+const compilePlayer = () => {
+  const coverSong = document.getElementById("coverPlayer");
+  const artistSong = document.getElementById("artistPlayer");
+  const titleSong = document.getElementById("titlePlayer");
+
+  titleSong.innerText = localStorage.getItem("selectedtrackTitle");
+  artistSong.innerText = localStorage.getItem("selectedartistSong");
+  coverSong.setAttribute("src", localStorage.getItem("selectedcoverAlbum"));
+};
+
+const hideOrSeen = () => {
+  const playerBar = document.getElementById("playerBar");
+  const artistSong = localStorage.getItem("selectedartistSong");
+
+  if (!artistSong || artistSong.value === "") {
+    playerBar.classList.add("d-none");
+    playerBar.classList.add("d-lg-block");
+  } else {
+    playerBar.classList.remove("d-none");
+    playerBar.classList.remove("d-lg-block");
+  }
+};
