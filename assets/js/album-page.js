@@ -109,8 +109,9 @@ function secondsToMinutes(durationInSeconds) {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const getToArtist = (id) => {
-  window.location.assign("./artist.html?Id=" + id);
+const getToArtist = (idArtist) => {
+  
+  window.location.assign(`/artistmanu.html?id=${idArtist}`);
 };
 
 

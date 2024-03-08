@@ -1,10 +1,18 @@
 // dichiaro le variabili dell'id artista e delle 5 tracce da inserire nel profilo
-const artistId = 102;
+// const artistId = 102;
 const songId = 2534909521;
 const songId2 = 764420732;
 const songId3 = 13140203;
 const songId4 = 702551962;
 const songId5 = 648151712;
+
+
+function getAlbumIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
+}
+
+const artistId= getAlbumIdFromUrl();
 const artistUrl = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`;
 const fanListUrl = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}/fans`;
 const options = {
