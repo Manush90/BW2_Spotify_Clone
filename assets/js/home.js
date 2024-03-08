@@ -64,7 +64,9 @@ const populateJumbotron = async () => {
     jumbotronContainer.innerHTML = `
       <div class="row rounded-1">
         <div class="col-3 d-flex flex-column justify-content-around">
-          <img class="img-fluid" src="${albumData.cover_medium}" alt="Album cover" />
+          <a href="./album-page.html?id=${albumData.id}">
+            <img class="img-fluid" src="${albumData.cover_medium}" alt="Album cover" />
+          </a>
         </div>
         <div class="col-9">
           <div class="d-flex flex-row align-items-center justify-content-between my-2">
@@ -146,7 +148,7 @@ const populateSecondSectionCards = async () => {
       card.innerHTML = `
       <div class="col">
         <div class="card h-100 border-0 p-2 bg-grey-10">
-          <a href="./album-page-center.html?id=${album.id}">
+          <a href="./album-page.html?id=${album.id}">
             <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
             <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
               <h5 class="card-title fs-6">${album.title}</h5>
@@ -185,7 +187,7 @@ const populateThirdSectionCards = async () => {
       card.innerHTML = `
       <div class="col">
         <div class="card h-100 border-0 p-2 bg-grey-10">
-          <a href="./album-page-center.html?id=${album.id}">
+          <a href="./album-page.html?id=${album.id}">
             <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
             <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
               <h5 class="card-title fs-6">${album.title}</h5>
