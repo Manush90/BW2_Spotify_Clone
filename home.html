@@ -40,7 +40,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="home.html">
+                    <a class="nav-link" aria-current="page" href="./home.html">
                       <svg
                         class="me-2"
                         xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +312,7 @@
             </div>
           </section>
           <footer>
-            <div class="container-fluid">
+            <div class="container">
               <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2 mt-5 pt-3">
                 <div class="col">
                   <span class="fw-bold">Azienda</span>
@@ -645,22 +645,16 @@
     <!-- mobile bar -->
 
     <!-- player bar -->
-    <div class="container-fluid fixed-bottom bg-dark py-1 m-1 d-none">
+    <div class="container-fluid fixed-bottom bg-dark py-1 m-1 d-none d-lg-block" id="playerBar">
       <div class="d-flex justify-content-between align-items-center row">
         <div class="d-flex col-4">
           <div class="d-flex align-items-center">
             <div>
-              <img
-                src="./assets/imgs/main/image-12.jpg"
-                alt="cover"
-                width="50px"
-                class="object-fit-fill"
-                id="coverPlayer"
-              />
+              <img src="" alt="" width="70px" class="object-fit-fill" id="coverPlayer" />
             </div>
-            <div class="lh-null pt-2 ps-3 d-flex flex-column" id="artistPlayer">
-              <h6>Fat Funny Friend</h6>
-              <p class="fs-8 text-secondary-emphasis" id="titlePlayer">Maddie Zahm</p>
+            <div class="ps-3 d-flex flex-column">
+              <h6 id="titlePlayer"></h6>
+              <p class="fs-8 text-secondary-emphasis" id="artistPlayer"></p>
             </div>
           </div>
           <!-- cuore -->

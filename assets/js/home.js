@@ -63,7 +63,7 @@ const populateJumbotron = async () => {
     // Crea e popola gli elementi HTML all'interno del container
     jumbotronContainer.innerHTML = `
       <div class="row rounded-1">
-        <div class="col-3 d-flex flex-column justify-content-around">
+        <div class="col-3 d-flex flex-column justify-content-around p-3">
           <a href="./album-page.html?id=${albumData.id}">
             <img class="img-fluid" src="${albumData.cover_medium}" alt="Album cover" />
           </a>
@@ -146,8 +146,7 @@ const populateSecondSectionCards = async () => {
 
       // Popola il contenuto della card
       card.innerHTML = `
-      <div class="col">
-        <div class="card h-100 border-0 p-2 bg-grey-10">
+        <div class="card h-100 border-0 p-3 bg-grey-10">
           <a href="./album-page.html?id=${album.id}">
             <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
             <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
@@ -156,7 +155,6 @@ const populateSecondSectionCards = async () => {
             </div>
           </a>
         </div>
-      </div>
       `;
 
       // Aggiungi la card al container della sezione "Altro di ciò che ti piace"
@@ -185,8 +183,7 @@ const populateThirdSectionCards = async () => {
 
       // Popola il contenuto della card
       card.innerHTML = `
-      <div class="col">
-        <div class="card h-100 border-0 p-2 bg-grey-10">
+        <div class="card h-100 border-0 p-3 bg-grey-10">
           <a href="./album-page.html?id=${album.id}">
             <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
             <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
@@ -195,7 +192,6 @@ const populateThirdSectionCards = async () => {
             </div>
           </a>
         </div>
-      </div>
       `;
 
       // Aggiungi la card al container della sezione "Ascoltati di recente"
@@ -213,25 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
   populateThirdSectionCards();
 });
 
-// const fetchPromises = endpoints.map(endpoint => fetch(endpoint));
-
-// Promise.all(fetchPromises)
-//   .then(responses => {
-//     // Process the responses
-//   })
-//   .catch(error => {
-//     // Handle any errors
-//   });
-
-//   try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
-// GET Fetch Requests
-// Aggiungi un gestore di eventi al pulsante del cuore
 const fillHeart = () => {
   const heartIcon = document.getElementById("heart");
   const heartPath = heartIcon.querySelector("path");

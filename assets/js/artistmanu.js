@@ -6,13 +6,12 @@ const songId3 = 13140203;
 const songId4 = 702551962;
 const songId5 = 648151712;
 
-
 function getAlbumIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("id");
 }
 
-const artistId= getAlbumIdFromUrl();
+const artistId = getAlbumIdFromUrl();
 const artistUrl = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`;
 const fanListUrl = `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}/fans`;
 const options = {
@@ -26,10 +25,7 @@ const options = {
 // popolo la prima traccia con cover album, nome traccia,durata, e ascolti totali
 async function populateFirstSong() {
   try {
-    const songResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/track/${songId}`,
-      options
-    );
+    const songResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${songId}`, options);
     const songResult = await songResponse.json();
     console.log(songResult);
 
@@ -49,10 +45,7 @@ async function populateFirstSong() {
 
     document.getElementById("artistName").textContent = artistResult.name;
 
-    const fanResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`,
-      options
-    );
+    const fanResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}`, options);
     const fanResult = await fanResponse.json();
     console.log(fanResult);
 
@@ -65,10 +58,7 @@ async function populateFirstSong() {
 // popolo la seconda traccia con cover album, nome traccia,durata, e ascolti totali
 async function populateSecondSongFields() {
   try {
-    const songResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/track/${songId2}`,
-      options
-    );
+    const songResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${songId2}`, options);
     const songResult = await songResponse.json();
     console.log(songResult);
 
@@ -85,10 +75,7 @@ async function populateSecondSongFields() {
 // popolo la terza traccia con cover album, nome traccia,durata, e ascolti totali
 async function populateThirdSongFields() {
   try {
-    const songResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/track/${songId3}`,
-      options
-    );
+    const songResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${songId3}`, options);
     const songResult = await songResponse.json();
     console.log(songResult);
 
@@ -106,10 +93,7 @@ async function populateThirdSongFields() {
 // popolo la quarta traccia con cover album, nome traccia,durata, e ascolti totali
 async function populateFourthSongFields() {
   try {
-    const songResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/track/${songId4}`,
-      options
-    );
+    const songResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${songId4}`, options);
     const songResult = await songResponse.json();
     console.log(songResult);
     const formattedDuration = formatDuration(songResult.duration);
@@ -126,10 +110,7 @@ async function populateFourthSongFields() {
 // popolo la quinta traccia con cover album, nome traccia,durata, e ascolti totali
 async function populateFifthSongFields() {
   try {
-    const songResponse = await fetch(
-      `https://deezerdevs-deezer.p.rapidapi.com/track/${songId5}`,
-      options
-    );
+    const songResponse = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${songId5}`, options);
     const songResult = await songResponse.json();
     console.log(songResult);
 
@@ -193,5 +174,29 @@ window.onload = () => {
   populateFifthSongFields();
   populateArtistImage();
   changeBackgroundImage();
+  hideOrSeen();
   // changeBackgroundImage();
+};
+
+const compilePlayer = () => {
+  const coverSong = document.getElementById("coverPlayer");
+  const artistSong = document.getElementById("artistPlayer");
+  const titleSong = document.getElementById("titlePlayer");
+
+  titleSong.innerText = localStorage.getItem("selectedtrackTitle");
+  artistSong.innerText = localStorage.getItem("selectedartistSong");
+  coverSong.setAttribute("src", localStorage.getItem("selectedcoverAlbum"));
+};
+
+const hideOrSeen = () => {
+  const playerBar = document.getElementById("playerBar");
+  const artistSong = localStorage.getItem("selectedartistSong");
+
+  if (!artistSong || artistSong.value === "") {
+    playerBar.classList.add("d-none");
+    playerBar.classList.add("d-lg-block");
+  } else {
+    playerBar.classList.remove("d-none");
+    playerBar.classList.remove("d-lg-block");
+  }
 };
