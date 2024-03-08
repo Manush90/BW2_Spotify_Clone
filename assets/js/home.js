@@ -37,19 +37,19 @@ const endpointsThirdSection = [
   "https://deezerdevs-deezer.p.rapidapi.com/album/13619731",
 ];
 
-// Funzione per ottenere i dati dell'album da un URL
-const getData = async (endpoint) => {
-  try {
-    const response = await fetch(endpoint, options);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
+// Rimuovi async/await
+const getData = (endpoint) => {
+  return fetch(endpoint, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      return null;
+    });
 };
 
 // Funzione per popolare il jumbotron con i dati dell'album
@@ -57,101 +57,159 @@ const populateJumbotron = async () => {
   try {
     const albumData = await getData(jumbotronEndpoint);
 
-    const albumImage = document.querySelector(".jumbotron img.img-fluid");
-    const albumTitle = document.querySelector(".jumbotron h1.display-4");
-    const albumInfo = document.querySelector(".jumbotron p.lead");
-    const albumCallToAction = document.querySelector(".jumbotron p.call");
+    // Seleziona il container del jumbotron
+    const jumbotronContainer = document.getElementById("jumbotronContainer");
 
-    albumImage.src = albumData.cover_medium;
-    albumTitle.textContent = albumData.title;
-    albumInfo.textContent = `${albumData.artist.name} • ${albumData.release_date} • ${albumData.nb_tracks} brani`;
-    albumCallToAction.textContent = `Ascolta l'ultimo album di ${albumData.artist.name}`;
+    // Crea e popola gli elementi HTML all'interno del container
+    jumbotronContainer.innerHTML = `
+      <div class="row rounded-1">
+        <div class="col-3 d-flex flex-column justify-content-around">
+          <img class="img-fluid" src="${albumData.cover_medium}" alt="Album cover" />
+        </div>
+        <div class="col-9">
+          <div class="d-flex flex-row align-items-center justify-content-between my-2">
+            <span class="text-uppercase fw-bold fs-7">Album</span>
+            <button class="btn text-uppercase fw-bold text-secondary bg-grey-03 rounded-pill fs-7 mt-3 me-2">
+              nascondi annunci
+            </button>
+          </div>
+          <h1 class="display-4 fw-bold mt-1 fs-1">${albumData.title}</h1>
+          <p class="lead fs-6 fw-bold">${albumData.artist.name} • ${albumData.release_date} • ${albumData.nb_tracks} brani</p>
+          <p class="call">Ascolta l'ultimo album di ${albumData.artist.name}</p>
+          <p class="lead">
+            <a class="btn bg-green rounded-pill fs-6 text-black px-4" href="#" role="button">Play</a>
+            <a class="btn btn-outline-light rounded-pill fs-6 px-4 mx-2" href="#" role="button">Salva</a>
+            <a class="btn text-secondary p-0 fs-7" href="#" role="button"> • • • </a>
+          </p>
+        </div>
+      </div>
+    `;
   } catch (error) {
     console.error("Error populating jumbotron:", error);
   }
 };
 
-// Funzione per popolare le card HTML con i dati della playlist
+// Funzione per popolare le card HTML con i dati delle playlist
 const populatePlaylistCards = async () => {
   try {
     const playlistData = await Promise.all(endpointsFirstSection.map((endpoint) => getData(endpoint)));
 
-    playlistData.forEach((playlist, index) => {
-      const card = document.querySelectorAll(".card")[index];
-      const titleElement = card.querySelector(".card-title");
-      const imageElement = card.querySelector(".img-fluid");
+    // Seleziona il container della sezione "Buonasera"
+    const buonaseraContainer = document.querySelector(".container-fluid .first-section");
 
-      titleElement.textContent = playlist.title;
-      imageElement.src = playlist.picture_medium;
+    // Crea e popola gli elementi HTML all'interno del container
+    playlistData.forEach((playlist) => {
+      // Crea la card
+      const card = document.createElement("div");
+      card.classList.add("col");
+
+      // Popola il contenuto della card
+      card.innerHTML = `
+      <div class="col">
+        <div class="card mb-3 p-0 border-0 bg-grey-01">
+          <a href="#">
+            <div class="row g-0 align-items-center">
+              <div class="col-2">
+                <img src="${playlist.picture_medium}" class="img-fluid rounded-start" alt="Playlist image" />
+              </div>
+              <div class="col-10">
+                <h5 class="card-title fs-6 mx-4 my-0">${playlist.title}</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      `;
+
+      //
+      buonaseraContainer.appendChild(card);
     });
   } catch (error) {
     console.error("Error populating playlist cards:", error);
   }
 };
 
-// Funzione per popolare le card HTML - CIò CHE TI PIACE - album
 const populateSecondSectionCards = async () => {
   try {
     const secondSectionData = await Promise.all(endpointsSecondSection.map((endpoint) => getData(endpoint)));
 
-    // Selezioniamo le card da popolare
-    const cardContainers = document.querySelectorAll(".second-section .card");
+    // Seleziona il container della sezione "Altro di ciò che ti piace"
+    const secondSectionContainer = document.querySelector(".second-section .row-cols-2");
 
-    // Popoliamo ogni card con i dati delle playlist
-    secondSectionData.forEach((album, index) => {
-      const card = cardContainers[index];
-      const titleElement = card.querySelector(".card-title");
-      const authorElement = card.querySelector(".card-text");
-      const imageElement = card.querySelector(".card-img-top");
-      const link = card.querySelector("a");
+    // Crea e popola gli elementi HTML all'interno del container
+    secondSectionData.forEach((album) => {
+      // Crea la card
+      const card = document.createElement("div");
+      card.classList.add("col");
 
-      titleElement.textContent = album.title;
-      authorElement.textContent = album.artist.name;
-      imageElement.src = album.cover_medium;
+      // Popola il contenuto della card
+      card.innerHTML = `
+      <div class="col">
+        <div class="card h-100 border-0 p-2 bg-grey-10">
+          <a href="./album-page-center.html?id=${album.id}">
+            <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
+            <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
+              <h5 class="card-title fs-6">${album.title}</h5>
+              <p class="card-text fs-7">${album.artist.name}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      `;
 
-      link.href = `./album-page.html?id=${album.id}`;
+      // Aggiungi la card al container della sezione "Altro di ciò che ti piace"
+      secondSectionContainer.appendChild(card);
     });
   } catch (error) {
-    console.error("Error populating playlist cards:", error);
+    console.error("Error populating second section cards:", error);
   }
 };
 
 // Funzione per popolare le card HTML - BUONASERA SECTION - album
+// Funzione per popolare le card HTML della sezione "Ascoltati di recente"
 const populateThirdSectionCards = async () => {
   try {
+    // Ottieni i dati degli album dalla terza sezione
     const thirdSectionData = await Promise.all(endpointsThirdSection.map((endpoint) => getData(endpoint)));
 
-    // Selezioniamo le card da popolare
-    const cardContainers = document.querySelectorAll(".third-section .card");
+    // Seleziona il container della sezione "Ascoltati di recente"
+    const thirdSectionContainer = document.querySelector(".third-section .row-cols-2");
 
-    // Popoliamo ogni card con i dati delle playlist
-    thirdSectionData.forEach((album, index) => {
-      const card = cardContainers[index];
-      const titleElement = card.querySelector(".card-title");
-      const authorElement = card.querySelector(".card-text");
-      const imageElement = card.querySelector(".card-img-top");
-      const link = card.querySelector("a");
+    // Crea e popola gli elementi HTML all'interno del container
+    thirdSectionData.forEach((album) => {
+      // Crea la card
+      const card = document.createElement("div");
+      card.classList.add("col");
 
-      titleElement.textContent = album.title;
-      authorElement.textContent = album.artist.name;
-      imageElement.src = album.cover_medium;
+      // Popola il contenuto della card
+      card.innerHTML = `
+      <div class="col">
+        <div class="card h-100 border-0 p-2 bg-grey-10">
+          <a href="./album-page-center.html?id=${album.id}">
+            <img src="${album.cover_medium}" class="card-img-top rounded" alt="${album.title}" />
+            <div class="card-body px-1 pt-3 pb-1 d-flex flex-column justify-content-between">
+              <h5 class="card-title fs-6">${album.title}</h5>
+              <p class="card-text fs-7">${album.artist.name}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      `;
 
-      link.href = `./album-page.html?id=${album.id}`;
-
-      // link.addEventListener("click", (event) => {
-      //   event.preventDefault(); // Previeni il comportamento predefinito del link
-      //   window.location.href = link.href; // Reindirizza alla pagina dell'album
-      //  });
+      // Aggiungi la card al container della sezione "Ascoltati di recente"
+      thirdSectionContainer.appendChild(card);
     });
   } catch (error) {
-    console.error("Error populating playlist cards:", error);
+    console.error("Error populating third section cards:", error);
   }
 };
 
-populateThirdSectionCards();
-populateSecondSectionCards();
-populatePlaylistCards();
-populateJumbotron();
+document.addEventListener("DOMContentLoaded", function () {
+  populateJumbotron();
+  populatePlaylistCards();
+  populateSecondSectionCards();
+  populateThirdSectionCards();
+});
 
 // const fetchPromises = endpoints.map(endpoint => fetch(endpoint));
 
@@ -245,6 +303,7 @@ shuffleButton.addEventListener("click", () => {
     shuffleButton.classList.add("fill-gray");
   }
 });
+
 repeatButton.addEventListener("click", () => {
   if (repeatButton.classList.contains("fill-gray")) {
     repeatButton.classList.add("fill-green");
