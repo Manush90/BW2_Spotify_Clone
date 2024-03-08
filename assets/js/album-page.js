@@ -6,14 +6,21 @@ const headers = {
   },
 };
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/album/"; const id = "248216622";
+// const url = "https://deezerdevs-deezer.p.rapidapi.com/album/"; const id = "248216622";
 
-// const url = window.location.pathname;
-// const id= url.split(`/`).pop()
+// // const url = window.location.pathname;
+// // const id= url.split(`/`).pop()
 
+function getAlbumIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
+}
+
+const albumId = getAlbumIdFromUrl();
+const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch(`${url}${id}`, {
+  fetch(`${url}`, {
     headers: {
       "X-RapidAPI-Key": "be3da42077mshb39f0419e14de60p17053fjsnfb2d6848dc67",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
