@@ -6,8 +6,7 @@ const headers = {
   },
 };
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/album/";
-const id = "248216622";
+const url = "https://deezerdevs-deezer.p.rapidapi.com/album/"; const id = "248216622";
 
 // const url = window.location.pathname;
 // const id= url.split(`/`).pop()
