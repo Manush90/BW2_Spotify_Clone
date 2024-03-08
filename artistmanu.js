@@ -152,21 +152,21 @@ async function populateArtistImage() {
 
 // cambo immagine di background tramite foto artista
 
-// async function changeBackgroundImage() {
-//   try {
-//     const artistResponse = await fetch(artistUrl, options);
-//     const artistResult = await artistResponse.json();
-//     console.log(artistResult);
+async function changeBackgroundImage() {
+  try {
+    const artistResponse = await fetch(artistUrl, options);
+    const artistResult = await artistResponse.json();
+    console.log(artistResult);
 
-//     // Seleziona l'elemento con id "bgImg1"
-//     const backgroundElement = document.getElementById("bgImg1");
+    // Seleziona l'elemento con id "bgImg1"
+    const backgroundElement = document.getElementById("bgImg1");
 
-//     // Aggiorna l'immagine di sfondo con l'immagine desiderata
-//     backgroundElement.style.backgroundImage = `url('${artistResult.picture_medium}')`;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+    // Aggiorna l'immagine di sfondo con l'immagine desiderata
+    backgroundElement.style.backgroundImage = `url('${artistResult.picture_xl}')`;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 // Chiamata alla funzione per cambiare l'immagine di sfondo
 
