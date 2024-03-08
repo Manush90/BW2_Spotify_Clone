@@ -6,6 +6,7 @@ const options = {
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
+
 // JUMBOTRON ENDPOINT
 const jumbotronEndpoint = "https://deezerdevs-deezer.p.rapidapi.com/album/226762";
 
@@ -17,6 +18,23 @@ const endpointsFirstSection = [
   "https://deezerdevs-deezer.p.rapidapi.com/playlist/34456",
   "https://deezerdevs-deezer.p.rapidapi.com/playlist/1230",
   "https://deezerdevs-deezer.p.rapidapi.com/playlist/7891",
+];
+
+// BUONASERA SECTION
+const endpointsSecondSection = [
+  "https://deezerdevs-deezer.p.rapidapi.com/album/8880231",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/9276214",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/1503218",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/125834",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/71318",
+];
+
+const endpointsThirdSection = [
+  "https://deezerdevs-deezer.p.rapidapi.com/album/105824",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/81847",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/2267671",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/90252342",
+  "https://deezerdevs-deezer.p.rapidapi.com/album/13619731",
 ];
 
 // Funzione per ottenere i dati dell'album da un URL
@@ -71,10 +89,68 @@ const populatePlaylistCards = async () => {
   }
 };
 
-// Chiamata alla funzione per popolare le card HTML con i dati delle playlist
-populatePlaylistCards();
+// Funzione per popolare le card HTML - CIò CHE TI PIACE - album
+const populateSecondSectionCards = async () => {
+  try {
+    const secondSectionData = await Promise.all(endpointsSecondSection.map((endpoint) => getData(endpoint)));
 
-// Chiamata alla funzione per popolare il jumbotron con i dati dell'album
+    // Selezioniamo le card da popolare
+    const cardContainers = document.querySelectorAll(".second-section .card");
+
+    // Popoliamo ogni card con i dati delle playlist
+    secondSectionData.forEach((album, index) => {
+      const card = cardContainers[index];
+      const titleElement = card.querySelector(".card-title");
+      const authorElement = card.querySelector(".card-text");
+      const imageElement = card.querySelector(".card-img-top");
+      const link = card.querySelector("a");
+
+      titleElement.textContent = album.title;
+      authorElement.textContent = album.artist.name;
+      imageElement.src = album.cover_medium;
+
+      link.href = `./album-page-center.html?id=${album.id}`;
+    });
+  } catch (error) {
+    console.error("Error populating playlist cards:", error);
+  }
+};
+
+// Funzione per popolare le card HTML - BUONASERA SECTION - album
+const populateThirdSectionCards = async () => {
+  try {
+    const thirdSectionData = await Promise.all(endpointsThirdSection.map((endpoint) => getData(endpoint)));
+
+    // Selezioniamo le card da popolare
+    const cardContainers = document.querySelectorAll(".third-section .card");
+
+    // Popoliamo ogni card con i dati delle playlist
+    thirdSectionData.forEach((album, index) => {
+      const card = cardContainers[index];
+      const titleElement = card.querySelector(".card-title");
+      const authorElement = card.querySelector(".card-text");
+      const imageElement = card.querySelector(".card-img-top");
+      const link = card.querySelector("a");
+
+      titleElement.textContent = album.title;
+      authorElement.textContent = album.artist.name;
+      imageElement.src = album.cover_medium;
+
+      link.href = `./album-page-center.html?id=${album.id}`;
+
+      // link.addEventListener("click", (event) => {
+      //   event.preventDefault(); // Previeni il comportamento predefinito del link
+      //   window.location.href = link.href; // Reindirizza alla pagina dell'album
+      //  });
+    });
+  } catch (error) {
+    console.error("Error populating playlist cards:", error);
+  }
+};
+
+populateThirdSectionCards();
+populateSecondSectionCards();
+populatePlaylistCards();
 populateJumbotron();
 
 // const fetchPromises = endpoints.map(endpoint => fetch(endpoint));

@@ -66,6 +66,11 @@ header {
   background-color: var(--grey_10);
 }
 
+.card a{
+  text-decoration: none;
+  color: white;
+}
+
 .card.bg-grey-01:hover {
   cursor: pointer;
   background-color: var(--clear-grey_01);
