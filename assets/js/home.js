@@ -305,7 +305,6 @@ shuffleButton.addEventListener("click", () => {
     shuffleButton.classList.add("fill-gray");
   }
 });
-
 repeatButton.addEventListener("click", () => {
   if (repeatButton.classList.contains("fill-gray")) {
     repeatButton.classList.add("fill-green");

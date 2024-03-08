@@ -9,7 +9,7 @@ const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
 document.addEventListener("DOMContentLoaded", function () {
   fetch(`${url}`, {
     headers: {
-      "X-RapidAPI-Key": "be3da42077mshb39f0419e14de60p17053fjsnfb2d6848dc67",
+      "X-RapidAPI-Key": "0974397af4msha0b6e043e50ee9ep12a0fbjsneab4f4422724",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
     },
   })
@@ -118,8 +118,8 @@ function secondsToMinutes(durationInSeconds) {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-const getToArtist = (id) => {
-  window.location.assign("./artist.html?Id=" + id);
+const getToArtist = (idArtist) => {
+  window.location.assign(`/artistmanu.html?id=${idArtist}`);
 };
 
 function trackSessionStorage(event) {
