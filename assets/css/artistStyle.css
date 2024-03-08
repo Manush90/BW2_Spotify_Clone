@@ -1,0 +1,85 @@
+.smalltxt {
+  font-size: 0.6rem;
+}
+
+.medtxt {
+  font-size: 1rem;
+}
+
+.fontFriends {
+  font-family: "Circular";
+}
+
+.whitehover:hover {
+  color: white;
+}
+
+.blackhover:hover {
+  color: white;
+  background-color: #1db954;
+}
+
+.bgImg {
+  background-image: url(./assets/imgs/main/cbwallpaper.png);
+  background-size: cover;
+  background-position-y: -10vh;
+  background-position-x: center;
+  background-repeat: no-repeat;
+}
+
+/* .bgImg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.658), rgba(255, 255, 255, 0));
+} */
+
+.verifySize {
+  height: 20px;
+}
+
+.mbextend {
+  margin-bottom: 7.5rem;
+}
+
+.artistFont {
+  font-size: xxx-large;
+  letter-spacing: -2px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 10px #343a40a6;
+}
+
+.medtxt2 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-shadow: 1px 2px 4px #343a40;
+  color: white;
+}
+
+.textshadow {
+  text-shadow: 1px 2px 4px #343a40;
+}
+.playButton {
+  background: none;
+  border: none;
+}
+.playButtonSize {
+  height: 40px;
+}
+
+.followBtn {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  width: 11vh;
+  background: none;
+  color: whitesmoke;
+  font-size: small;
+}
+
+.fillwhite {
+  fill: white;
+}
