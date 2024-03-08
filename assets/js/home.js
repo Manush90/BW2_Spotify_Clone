@@ -109,7 +109,7 @@ const populateSecondSectionCards = async () => {
       authorElement.textContent = album.artist.name;
       imageElement.src = album.cover_medium;
 
-      link.href = `./album-page-center.html?id=${album.id}`;
+      link.href = `./album-page.html?id=${album.id}`;
     });
   } catch (error) {
     console.error("Error populating playlist cards:", error);
@@ -136,7 +136,7 @@ const populateThirdSectionCards = async () => {
       authorElement.textContent = album.artist.name;
       imageElement.src = album.cover_medium;
 
-      link.href = `./album-page-center.html?id=${album.id}`;
+      link.href = `./album-page.html?id=${album.id}`;
 
       // link.addEventListener("click", (event) => {
       //   event.preventDefault(); // Previeni il comportamento predefinito del link

@@ -1,13 +1,10 @@
-const headers = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "be3da42077mshb39f0419e14de60p17053fjsnfb2d6848dc67",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
-};
+function getAlbumIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
+}
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/album/248216622";
-// const id = "";
+const albumId = getAlbumIdFromUrl();
+const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch(`${url}`, {
