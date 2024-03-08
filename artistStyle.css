@@ -60,6 +60,9 @@
   color: white;
 }
 
+.textshadow {
+  text-shadow: 1px 2px 4px #343a40;
+}
 .playButton {
   background: none;
   border: none;
@@ -75,4 +78,8 @@
   background: none;
   color: whitesmoke;
   font-size: small;
+}
+
+.fillwhite {
+  fill: white;
 }
