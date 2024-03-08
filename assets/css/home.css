@@ -11,6 +11,7 @@
 
 body {
   font-family: "Circular";
+  height: 100vh;
 }
 
 header {
@@ -56,8 +57,18 @@ header {
   background-color: var(--btn_green);
 }
 
+.bg-green:hover {
+  background-color: var(--btn_green);
+  transform: scale(1.05);
+}
+
 .bg-grey-10 {
   background-color: var(--grey_10);
+}
+
+.card a{
+  text-decoration: none;
+  color: white;
 }
 
 .card.bg-grey-01:hover {
@@ -221,14 +232,24 @@ body {
 .fill-gray {
   fill: #969696;
 }
+
 .fill-black {
   fill: black;
 }
 .fill-white {
   fill: white;
 }
-#hoverSVG:hover {
+
+.hoverSVG:hover {
   fill: white;
+}
+
+.hoverPlay:hover {
+  transform: scale(1.05);
+}
+
+.fill-green {
+  fill: var(--btn_green);
 }
 
 .lh-null {
